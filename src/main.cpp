@@ -73,7 +73,7 @@ int main() {
     return 0;
 }
 
-// Function to handle the button press and toggle labs
+// Function to handle the button press and toggle labs 
 void check_button() {
     bool button_state = gpio_get(BUTTON_PIN);  // Active low (pressed = 0)
     if (button_state) {  // If button is pressed (and was not previously pressed)
