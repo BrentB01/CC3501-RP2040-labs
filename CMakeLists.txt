@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.13)
 
 # Detect if the active kit is an ARM cross-compiler
@@ -32,6 +33,8 @@ if(CrossCompiling)
         PUBLIC
         src/main.cpp
         src/drivers/logging/logging.cpp
+        src/drivers/leds.cpp
+        src/drivers/accelerometer.cpp
     )
     target_include_directories(labs
         PUBLIC 
@@ -77,11 +80,15 @@ else()
         PUBLIC
         src/main.cpp
         src/drivers/logging/logging.cpp
+        src/drivers/leds.cpp
+        src/drivers/accelerometer.cpp
+        src/drivers/microphone.cpp
         tests/mocks/pico/stdlib.cpp
         tests/mocks/pico/time.cpp
         tests/mocks/hardware/gpio.cpp
         tests/mocks/hardware/pio.cpp
         tests/mocks/ws2812.cpp
+        
     )
     target_include_directories(labs
         PUBLIC 
